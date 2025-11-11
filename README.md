@@ -1,2 +1,5 @@
 # Obsi-Parser
-A helper package for my personal website that can parse markdown files and pick out links from text in an obsidian like fashion
+A helper package for converting markdown into html.
+
+Supports obsidian style links and returns translated html and links to then be used on something like my personal website
+
