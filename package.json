@@ -1,0 +1,38 @@
+{
+  "name": "obby-parser",
+  "version": "0.1.2",
+  "description": "Parse Obsidian-style markdown files including ([[links]]) into HTML and extract links",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "ts-node src/example.ts",
+    "test": "vitest",
+    "lint": "eslint \"src/**/*.ts\"",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "obsidian",
+    "markdown",
+    "parser",
+    "npx",
+    "typescript"
+  ],
+  "author": "cmac2112",
+  "license": "MIT",
+  "dependencies": {
+    "markdown-it": "^13.0.2"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.0",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0",
+    "vitest": "^1.4.0"
+  }
+}
