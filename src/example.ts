@@ -11,3 +11,5 @@ const content = fs.readFileSync(input, "utf8");
 const result = parseMarkdown(content, "www.personalwebsite.com/test/");
 console.log("HTML output:\n", result.html);
 console.log("\nLinks found:", result.links_set);
+
+console.log("json parsed", JSON.stringify(result.html))

@@ -14,7 +14,7 @@ export type ParseResult = {
   links_set: Set<string>;
 };
 
-const md = new MarkdownIt();
+const md = new MarkdownIt({html: true});
 
 /**
  * Normalize link text to a safe file name or slug.
@@ -32,7 +32,7 @@ function transformWikilinks(input: string, route: string, links: Set<string>): s
   // Use a replacer so we can capture multiple occurrences
   return input.replace(/\[\[([^\]]+)\]\]/g, (_, inner: string) => {
     const display = inner.trim();
-    const href = ` ${route}${normalizeLinkText(display)}`;
+    const href = `/${normalizeLinkText(display)}`;
     links.add(display);
     // Return markdown inline HTML anchor; markdown-it will preserve it
     return `<a href="${href}" target="_blank" rel="noopener noreferrer">${display}</a>`;
