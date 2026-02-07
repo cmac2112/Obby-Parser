@@ -10,7 +10,7 @@ describe("parseMarkdown", () => {
     pageTest.add("My Page")
 
     expect(links_set).toEqual(pageTest);
-    expect(html).toContain('&lt;a href=&quot; test/My-Page&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;My Page&lt;/a&gt;');
+    expect(html).toContain('<p>This references <a href="/mypage" target="_blank" rel="noopener noreferrer">My Page</a> and also inline <strong>bold</strong> text.</p>');
     expect(html).toContain("<strong>bold</strong>");
   });
 

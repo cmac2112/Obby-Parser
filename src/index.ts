@@ -21,7 +21,7 @@ const md = new MarkdownIt({html: true});
  * For now, this is minimal: trim and replace spaces with dashes.
  */
 function normalizeLinkText(text: string): string {
-  return text.trim().replace(/\s+/g, "-");
+  return text.trim().replace(/\s+/g, "").toLowerCase();
   
 }
 
@@ -35,6 +35,7 @@ function transformWikilinks(input: string, route: string, links: Set<string>): s
     const href = `/${normalizeLinkText(display)}`;
     links.add(display);
     // Return markdown inline HTML anchor; markdown-it will preserve it
+    //for ease of use, this will return a stripped down version of the url
     return `<a href="${href}" target="_blank" rel="noopener noreferrer">${display}</a>`;
   });
 }
